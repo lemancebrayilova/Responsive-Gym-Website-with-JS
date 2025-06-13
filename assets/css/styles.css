@@ -197,7 +197,7 @@ img {
     backdrop-filter: blur(32px);
     -webkit-backdrop-filter: blur(32px);
     top: 0;
-    right: 0;
+    right: -100%;
     width: 80%;
     height: 100%;
     border-left: 2px solid var(--first-color-gray);
@@ -231,7 +231,9 @@ img {
 }
 
 /* Show menu */
-
+.show-menu {
+  right: 0;
+}
 
 /* Change background header */
 
