@@ -44,6 +44,30 @@ window.addEventListener('scroll', scrollHeader)
 
 
 /*=============== CALCULATE JS ===============*/
+const calculateForm = document.getElementById('calculate-form'),
+      calculateCm = document.getElementById('calculate-cm'),
+      calculateKg = document.getElementById('calculate-kg'),
+      calculateMessage = document.getElementById('calculate-message')
 
+const calculateBmi = (e) => {
+    e.preventDefault()
+
+    // Check if the fields have a value
+    if(calculateCm.value === '' || calculateKg.value === '') {
+        // Add and remove color
+        calculateMessage.classList.remove('color-green')
+        calculateMessage.classList.add('color-red')
+
+        // Show message
+        calculateMessage.textContent = 'Fill in the Height and Weight'
+
+        // Remove message three seconds
+        setTimeout(() => {
+            calculateMessage.textContent = ''
+        }, 3000)
+    }
+}
+
+calculateForm.addEventListener('submit', calculateBmi)
 
 /*=============== EMAIL JS ===============*/
